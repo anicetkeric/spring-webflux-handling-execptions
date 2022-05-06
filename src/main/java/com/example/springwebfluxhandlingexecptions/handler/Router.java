@@ -18,7 +18,7 @@ public class Router {
     @Bean
     public RouterFunction<ServerResponse> routeUserAccount(final AuthorHandler authorHandler) {
         return route()
-                .nest(path("/api/"), builder -> builder.GET("/book", authorHandler::getAuthor))
+                .nest(path("/api"), builder -> builder.GET("/author", authorHandler::getAuthor))
                 .build();
     }
 }
